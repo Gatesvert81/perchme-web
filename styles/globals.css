@@ -1,21 +1,183 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+/* Montserrat Font import  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/* Catamaran Font import  */
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Tailwindcss setup  */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
+  html, body {
+    @apply p-0 m-0 font-Montserrat scroll-smooth bg-white dark:bg-black dark:text-white 
+  }
+
+  a{
+    @apply text-inherit cursor-pointer
+  }
+
+  main,
+  section {
+    @apply w-full h-fit p-5 
+  }
+
+  section::-webkit-scrollbar{
+    @apply hidden
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl font-semibold normal-case
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl font-semibold normal-case
+  }
+
+  h3 {
+    @apply text-3xl md:text-4xl font-semibold normal-case
+  }
+
+  h4 {
+    @apply text-2xl md:text-3xl font-semibold normal-case
+  }
+
+  h5 {
+    @apply text-xl md:text-2xl font-semibold normal-case
+  }
+
+  h6 {
+    @apply text-base md:text-xl font-semibold lowercase
+  }
+
+  p {
+    @apply text-base md:text-sm font-medium
+  }
+
+  button {
+    @apply flex justify-center items-center gap-2 py-2 px-1 text-sm
+  }
+
+  fieldset{
+    @apply w-full flex flex-col gap-1
+  }
+
+  label{
+    @apply text-sm font-medium
+  }
+
+  input, textarea{
+    @apply w-full px-3 py-2 rounded-md border-2 bg-light-gray dark:bg-dark-black border-light-gray 
+  }
+
+  input[type="date"]::-webkit-datetime-edit-text{
+    @apply px-2
+  }
+
+
+}
+
+@layer components {
+
+   
+  /* Buttons  */
+  .primary-btn {
+    @apply bg-orangered font-semibold text-white capitalize rounded text-sm px-5 py-2
+  }
+
+  .icon {
+    @apply w-8 h-6 relative
+  }
+
+  .tetiary-btn{
+    @apply bg-orangered/20 text-orangered font-semibold rounded
+  }
+
+  .signup_btn {
+    @apply py-3 px-4 border-2 border-light-gray rounded-md flex-row-reverse
+  }
+
+  .footer-btn{
+    @apply flex flex-col items-center uppercase text-sea-blue font-semibold text-xs gap-1
+  }
+
+  .follow-btn {
+    @apply px-2 text-xs 
+  }
+
+  .side-nav-btn{
+    @apply px-1 w-full flex justify-start relative 
+  }
+
+  /* Text styles  */
+  .small-text {
+    @apply text-xs
+  }
+
+  .normal-text{
+    @apply text-sm
+  }
+
+  .medium-text {
+    @apply text-base
+  }
+
+  .large-text {
+    @apply text-lg
+  }
+
+  .text-link {
+    @apply text-orangered font-semibold
+   }
+
+  /* Inputs Styles  */
+  .verify-input {
+    @apply w-10 h-fit flex-shrink-0
+  }
+
+  .radio {
+    @apply w-full py-2 text-center bg-light-gray text-black-one rounded-md font-semibold capitalize
+  }
+
+  .radio-select {
+    @apply w-full py-2 text-center bg-sea-blue text-white rounded-md font-semibold capitalize
+  }
+
+  .form-control {
+    @apply transition-none w-12 h-12 text-center
+  }
+
+  .form-control:focus {
+    @apply bg-white border-[#884377] outline-0 text-[#3f4254]
+  }
+
+  .form-control.form-control-solid {
+    @apply bg-[#F3F6F9] border-[#F3F6F9] text-[#3F4254] transition-colors duration-150
+  }
+
+  .form-control.form-control-solid:active, .form-control.form-control-solid.active, .form-control.form-control-solid:focus, .form-control.form-control-solid.focus {
+    @apply bg-[#EBEDF3] border-[#EBEDF3] text-[#3F4254] transition-colors
+  }
+
+  .Flipped, .Flipped .Content {
+    @apply rotate-180
+  }
+
+  .tab-screen::-webkit-scrollbar{
+    @apply hidden fixed top-28 left-20 bg-red-400
+  }
+
+}
+
+
+
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -23,4 +185,4 @@ a {
     color: white;
     background: black;
   }
-}
+} */
