@@ -2,6 +2,6 @@
 	"endOfLine": "lf",
 	"tabWidth": 2,
 	"singleQuote": true,
-	"bracketSameLine": false,
+	"bracketSameLine": true,
 	"useTabs": true
 }

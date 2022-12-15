@@ -9,29 +9,14 @@ function SignUpForm({ handleSubmit }) {
 				onSubmit={handleSubmit}
 			>
 				<div className="w-full grid grid-cols-2 gap-2">
-					<Fieldset
-						type="text"
-						placeholder="Sonu"
-						required
-						name="first_name"
-					>
+					<Fieldset type="text" placeholder="Sonu" required name="first_name">
 						First name
 					</Fieldset>
-					<Fieldset
-						type="text"
-						placeholder="Kumar"
-						required
-						name="last_name"
-					>
+					<Fieldset type="text" placeholder="Kumar" required name="last_name">
 						Last name
 					</Fieldset>
 				</div>
-				<Fieldset
-					type="tel"
-					placeholder="98 7837 8917"
-					name="phone"
-					required
-				>
+				<Fieldset type="tel" placeholder="98 7837 8917" name="phone" required>
 					Telephone number
 				</Fieldset>
 				<Fieldset
