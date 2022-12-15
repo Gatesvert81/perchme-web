@@ -1,20 +1,44 @@
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { Button, Image, Page, PageHead } from "../../src/Components";
 import { Details } from "../../src/Features/dorms/components";
 
+const room = {
+  title: "Nice Sabarh room",
+  description:
+    "I am happy uef  hg bviagra baieuga v oeaurg voeaig auva aoi anuovha aeorn ao asou aoisdh a;rndo aprnaosd ;aoa sohfalsiuf a;ufb",
+  hall_name: "Sarbah hall",
+  negotiable: "negotiable",
+  price: "1,000",
+  essentials: ["fridge", "Fan", "Waredrop", "Study table"],
+  occupant_type: "Perch",
+  number_of_occupants: 1,
+  date_submitted: "11th January 2023",
+};
 function Room() {
-  const room = {
-    title: "Nice Sabarh room",
-    description:
-      "I am happy uef  hg bviagra baieuga v oeaurg voeaig auva aoi anuovha aeorn ao asou aoisdh a;rndo aprnaosd ;aoa sohfalsiuf a;ufb",
-    hall_name: "Sarbah hall",
-    negotiable: "negotiable",
-    price: "1,000",
-    essentials: ["fridge", "Fan", "Waredrop", "Study table"],
-    occupant_type: "Perch",
-    number_of_occupants: 1,
-    date_submitted: "11th January 2023",
-  };
+  const [roomData, setRoomData] = useState([]);
+  const router = useRouter();
+
+  useEffect(() => {
+    const getRooms = async () => {
+      const response = await fetch(
+        `http://localhost:1337/api/rooms/${router.query?.room_id}`,
+        {
+          method: "GET",
+        }
+      )
+        .then((response) => response.text())
+        .then((result) => {
+          return result;
+        });
+      // const data = await response.json();
+      console.log(JSON.parse(response));
+      const results = JSON.parse(response);
+      setRoomData(results?.data?.attributes);
+    };
+
+    getRooms();
+  }, []);
 
   return (
     <Page style="pt-14">
@@ -31,7 +55,7 @@ function Room() {
               {/* </AnchorLink> */}
             </p>
             <p className="room__sub__navigation__arrow">{`>`}</p>
-            <p>{room?.title}</p>
+            <p>{roomData?.title}</p>
           </div>
           <div className="w-full flex justify-between">
             <Button
@@ -53,21 +77,23 @@ function Room() {
             </div>
             <div className="">
               <div className="flex justify-between">
-                <h5 className="main__head">{room?.hall_name}</h5>
+                <h5 className="main__head">{roomData?.hall_name}</h5>
                 <div>
-                  <p className="head">{`${room?.negotiable}  `}</p>
-                  <p className="head">{`  GH¢${room?.price}`}</p>
+                  <p className="head">{`${roomData?.negotiable}  `}</p>
+                  <p className="head">{`GH¢${roomData?.price?.toString()}`}</p>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <Button style="tetiary-btn" 
-                    // click={() => handleOffer()}
-                    >
+                <Button
+                  style="tetiary-btn"
+                  // click={() => handleOffer()}
+                >
                   Make an Offer
                 </Button>
-                <Button style="primary-btn" 
-                    // click={() => handleOffer()}
-                    >
+                <Button
+                  style="primary-btn"
+                  // click={() => handleOffer()}
+                >
                   Apply
                 </Button>
               </div>
