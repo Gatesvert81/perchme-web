@@ -10,8 +10,7 @@ function Page({ children, style }) {
 			}}
 			animate={{
 				opacity: 1,
-			}}
-		>
+			}}>
 			{children}
 		</motion.div>
 	);

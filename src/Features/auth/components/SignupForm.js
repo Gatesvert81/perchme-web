@@ -6,8 +6,7 @@ function SignUpForm({ handleSubmit }) {
 		<>
 			<form
 				className="flex flex-col items-center gap-3"
-				onSubmit={handleSubmit}
-			>
+				onSubmit={handleSubmit}>
 				<div className="w-full grid grid-cols-2 gap-2">
 					<Fieldset type="text" placeholder="Sonu" required name="first_name">
 						First name
@@ -23,24 +22,21 @@ function SignUpForm({ handleSubmit }) {
 					type="email"
 					placeholder="name@company.com"
 					name="email"
-					required
-				>
+					required>
 					Email address
 				</Fieldset>
 				<Fieldset
 					type="password"
 					placeholder="*********"
 					name="password"
-					required
-				>
+					required>
 					Password
 				</Fieldset>
 				<Fieldset
 					type="password"
 					placeholder="*********"
 					name="c_password"
-					required
-				>
+					required>
 					Confirm Password
 				</Fieldset>
 				<p>

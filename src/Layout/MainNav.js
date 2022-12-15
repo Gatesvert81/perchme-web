@@ -66,8 +66,7 @@ function MainNav({ children }) {
 							}}
 							transition={{
 								default: { ease: 'linear' },
-							}}
-						>
+							}}>
 							{true ? (
 								<>
 									<div className="side__nav__main">
@@ -94,8 +93,7 @@ function MainNav({ children }) {
 														<div
 															className="side__nav__btn__num"
 															seen={btn.seen}
-															empty={btn.number > 0}
-														>
+															empty={btn.number > 0}>
 															{btn.number}
 														</div>
 													</Button>

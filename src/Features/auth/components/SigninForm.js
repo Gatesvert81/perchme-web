@@ -6,22 +6,19 @@ function SignInForm({ handleSubmit }) {
 		<>
 			<form
 				className="flex flex-col items-center gap-3"
-				onSubmit={handleSubmit}
-			>
+				onSubmit={handleSubmit}>
 				<Fieldset
 					type="email"
 					placeholder="name@company.com"
 					name="email"
-					required
-				>
+					required>
 					Email address
 				</Fieldset>
 				<Fieldset
 					type="password"
 					placeholder="*********"
 					name="password"
-					required
-				>
+					required>
 					Password
 				</Fieldset>
 				<p>

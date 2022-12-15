@@ -7,8 +7,7 @@ function AnchorLink({ children, route, pass, target, style }) {
 			href={route}
 			passHref={pass || false}
 			className={`cursor-pointer ${style}`}
-			target={target ? '_blank' : null}
-		>
+			target={target ? '_blank' : null}>
 			{children}
 		</Link>
 	);
