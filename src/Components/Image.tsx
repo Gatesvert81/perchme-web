@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import NextImage from 'next/image';
 
-function Image({ src, alt, boxStyle, style, sizes }) {
-  const [mainStyle, setMainStyle] = useState(null);
+interface ImageProps {
+  src: string;
+  alt: string;
+  boxStyle?: string;
+  style?: string;
+  sizes?: string;
+  layout?: 'fill' | 'fixed' | 'intrinsic' | 'responsive';
+  className?: string;
+}
+
+function Image({ src, alt, boxStyle, style, sizes }: ImageProps) {
+  const [mainStyle, setMainStyle] = useState<string | undefined>('');
 
   useEffect(() => {
     setMainStyle(boxStyle);
-  }, []);
+  }, [boxStyle]);
 
   return (
     <div className={`relative ${mainStyle}`}>

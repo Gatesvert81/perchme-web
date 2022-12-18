@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Context({ children }) {
+function Context({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 

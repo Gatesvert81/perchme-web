@@ -1,22 +1,23 @@
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import { Button, Image, Page, PageHead } from "../../src/Components";
-import { Details } from "../../src/Features/dorms/components";
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import { Button, Image, Page, PageHead } from '../../src/Components';
+import { Details } from '../../src/Features/dorms/components';
 
 const room = {
-  title: "Nice Sabarh room",
+  title: 'Nice Sabarh room',
   description:
-    "I am happy uef  hg bviagra baieuga v oeaurg voeaig auva aoi anuovha aeorn ao asou aoisdh a;rndo aprnaosd ;aoa sohfalsiuf a;ufb",
-  hall_name: "Sarbah hall",
-  negotiable: "negotiable",
-  price: "1,000",
-  essentials: ["fridge", "Fan", "Waredrop", "Study table"],
-  occupant_type: "Perch",
+    'I am happy uef  hg bviagra baieuga v oeaurg voeaig auva aoi anuovha aeorn ao asou aoisdh a;rndo aprnaosd ;aoa sohfalsiuf a;ufb',
+  hall_name: 'Sarbah hall',
+  negotiable: 'negotiable',
+  price: '1,000',
+  essentials: ['fridge', 'Fan', 'Waredrop', 'Study table'],
+  occupant_type: 'Perch',
   number_of_occupants: 1,
-  date_submitted: "11th January 2023",
+  date_submitted: '11th January 2023',
 };
 function Room() {
-  const [roomData, setRoomData] = useState([]);
+  // REVIEW: Define the types for the response
+  const [roomData, setRoomData] = useState<string[]>([]);
   const router = useRouter();
 
   useEffect(() => {
@@ -24,7 +25,7 @@ function Room() {
       const response = await fetch(
         `http://localhost:1337/api/rooms/${router.query?.room_id}`,
         {
-          method: "GET",
+          method: 'GET',
         }
       )
         .then((response) => response.text())
@@ -38,7 +39,7 @@ function Room() {
     };
 
     getRooms();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Page style="pt-14">

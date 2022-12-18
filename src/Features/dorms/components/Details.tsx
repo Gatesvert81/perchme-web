@@ -1,6 +1,12 @@
 import React from 'react';
 
-const Section = ({ title, children }) => (
+const Section = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => (
   <div className="">
     <h6 className="capitalize">{title}</h6>
     <p className="font-normal">{children}</p>
