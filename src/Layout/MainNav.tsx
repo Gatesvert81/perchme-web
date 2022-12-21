@@ -1,25 +1,25 @@
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
-import { AnchorLink, Button } from "../Components";
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { AnchorLink, Button } from '../Components';
 
 function MainNav({ children }) {
   const [sideNav, setSideNav] = useState(false);
 
   const sideNavMainBtns = [
     {
-      name: "My Rental",
+      name: 'My Rental',
       seen: false,
       route: `/profile/rentals?userId=`,
       number: 0,
     },
     {
-      name: "Messages",
+      name: 'Messages',
       route: `/profile/chat?userId=`,
       seen: true,
       number: 4,
     },
     {
-      name: "Favorites",
+      name: 'Favorites',
       route: `/profile/rentals?userId=`,
       seen: false,
       number: 0,
@@ -54,20 +54,19 @@ function MainNav({ children }) {
               className="w-[70vw] h-full fixed top-0 right-0 z-50 bg-white px-5 py-10"
               initial={{
                 opacity: 0,
-                x: "100%",
+                x: '100%',
               }}
               animate={{
                 opacity: 1,
-                x: "0%",
+                x: '0%',
               }}
               exit={{
                 opacity: 0,
-                x: "100%",
+                x: '100%',
               }}
               transition={{
-                default: { ease: "linear" },
-              }}
-            >
+                default: { ease: 'linear' },
+              }}>
               {true ? (
                 <>
                   <div className="side__nav__main">
@@ -94,8 +93,7 @@ function MainNav({ children }) {
                             <div
                               className="side__nav__btn__num"
                               seen={btn.seen}
-                              empty={btn.number > 0}
-                            >
+                              empty={btn.number > 0}>
                               {btn.number}
                             </div>
                           </Button>

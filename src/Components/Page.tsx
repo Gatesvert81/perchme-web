@@ -1,7 +1,13 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 
-function Page({ children, style }) {
+const Page = ({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style: string;
+}) => {
   return (
     <motion.div
       className={`w-full ${style}`}
@@ -10,11 +16,10 @@ function Page({ children, style }) {
       }}
       animate={{
         opacity: 1,
-      }}
-    >
+      }}>
       {children}
     </motion.div>
   );
-}
+};
 
 export default Page;

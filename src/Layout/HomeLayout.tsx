@@ -1,7 +1,7 @@
-import React from "react";
-import HomeNav from "./HomeNav";
+import React from 'react';
+import HomeNav from './HomeNav';
 
-function HomeLayout({ children }) {
+function HomeLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="w-full h-screen">
       <HomeNav />

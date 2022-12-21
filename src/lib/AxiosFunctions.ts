@@ -21,15 +21,15 @@ export async function fetchPost(url, params = {}) {
   });
 
   const requestOptions = {
-    method: "POST",
+    method: 'POST',
     body: formData,
-    redirect: "follow",
+    redirect: 'follow',
   };
 
   return await fetch(url, requestOptions)
     .then((response) => response.text())
     .then((result) => {
-      return result ;
+      return result;
     })
-    .catch((error) => console.log("error", error));
+    .catch((error) => console.log('error', error));
 }

@@ -1,5 +1,5 @@
-import React from "react";
-import { AnchorLink, Button, Card, Image } from "../../../Components";
+import React from 'react';
+import { AnchorLink, Button, Card, Image } from '../../../Components';
 
 function RoomCard({ room, id }) {
   // const room = {

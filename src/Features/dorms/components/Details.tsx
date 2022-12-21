@@ -1,6 +1,12 @@
-import React from "react";
+import React from 'react';
 
-const Section = ({ title, children }) => (
+const Section = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => (
   <div className="">
     <h6 className="capitalize">{title}</h6>
     <p className="font-normal">{children}</p>
@@ -15,7 +21,9 @@ function Details({ room }) {
         <Section title="Description">{room?.description}</Section>
         <Section title="Essentials">
           {room?.essentials?.map((essential) => (
-            <span className="px-5" key={essential}>{essential}</span>
+            <span className="px-5" key={essential}>
+              {essential}
+            </span>
           ))}
         </Section>
         <Section title="Occupant type">{room?.occupant_type}</Section>

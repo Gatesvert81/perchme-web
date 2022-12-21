@@ -1,7 +1,7 @@
-import Head from "next/head";
-import React from "react";
+import Head from 'next/head';
+import React from 'react';
 
-function PageHead({ title, children }) {
+function PageHead({ title, children }: { title: string; children: string }) {
   return (
     <Head>
       <title>{title}</title>
