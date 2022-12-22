@@ -1,4 +1,5 @@
 import React from 'react';
+import { RoomDataType } from '../../../types';
 
 const Section = ({
   title,
@@ -13,24 +14,24 @@ const Section = ({
   </div>
 );
 
-function Details({ room }) {
+function Details({ room }: { room: RoomDataType | undefined }) {
   return (
     <div className="w-full h-fit flex flex-col gap-2">
       <h5>Details</h5>
       <div className="details__main__section">
         <Section title="Description">{room?.description}</Section>
         <Section title="Essentials">
-          {room?.essentials?.map((essential) => (
+          {/* {room?.essentials?.map((essential) => (
             <span className="px-5" key={essential}>
               {essential}
             </span>
-          ))}
+          ))} */}
         </Section>
         <Section title="Occupant type">{room?.occupant_type}</Section>
         <Section title="Number of Occupants">
           {room?.number_of_occupants}
         </Section>
-        <Section title="Date Posted">{room?.date_submitted}</Section>
+        {/* <Section title="Date Posted">{room?.date_submitted}</Section> */}
       </div>
     </div>
   );

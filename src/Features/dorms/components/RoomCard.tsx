@@ -1,7 +1,24 @@
 import React from 'react';
 import { AnchorLink, Button, Card, Image } from '../../../Components';
 
-function RoomCard({ room, id }) {
+type RoomDataType = {
+  room: {
+    university: string;
+    room_type: string;
+    gender: string;
+    number_of_occupants: number;
+    description: string | null;
+    price: number;
+    negotiable: boolean;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    occupant_type: string;
+  };
+  id: number;
+};
+
+function RoomCard({ room, id }: RoomDataType) {
   // const room = {
   //   id: "room1",
   //   university_name: "University of Ghana",
@@ -22,7 +39,7 @@ function RoomCard({ room, id }) {
         <div className="flex-1.5 flex-col">
           <div className="flex flex-col p-3">
             <p className="small-text">{room?.university}</p>
-            <h5 className="list__card__text">{room?.hall_name}</h5>
+            {/* <h5 className="list__card__text">{room?.hall_name}</h5> */}
           </div>
           <div className="w-full border-t-2 border-light-gray flex justify-between items-center px-3 py-1">
             <p className="list__card__price">{`GH¢${room?.price?.toString()}`}</p>

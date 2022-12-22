@@ -2,7 +2,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { AnchorLink, Button } from '../Components';
 
-function MainNav({ children }) {
+interface MainNavProps {
+  children?: React.ReactNode;
+}
+
+function MainNav({ children }: MainNavProps) {
   const [sideNav, setSideNav] = useState(false);
 
   const sideNavMainBtns = [
@@ -90,10 +94,7 @@ function MainNav({ children }) {
                             <div className="side__nav__btn__text">
                               {btn.name}
                             </div>
-                            <div
-                              className="side__nav__btn__num"
-                              seen={btn.seen}
-                              empty={btn.number > 0}>
+                            <div className="side__nav__btn__num">
                               {btn.number}
                             </div>
                           </Button>

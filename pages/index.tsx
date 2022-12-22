@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { AnchorLink, Button, Image, Page, PageHead } from "../src/Components";
-import { HomeLayout } from "../src/Layout";
+import { NextPage } from 'next';
+import { ReactElement, useState } from 'react';
+import { AnchorLink, Button, Image, Page, PageHead } from '../src/Components';
+import { HomeLayout } from '../src/Layout';
 
 export default function Home() {
   const [sectionSelect, setSectionSelect] = useState(true);
@@ -11,22 +12,18 @@ export default function Home() {
       <main className="flex flex-col gap-10">
         <div className="w-full h-full flex flex-col gap-5">
           <div className="bg-white relative w-40 h-8 p-2 rounded-full shadow-md shadow-light-gray">
-            <div className="home__section__select" select={sectionSelect} />
+            <Button style="home__section__select" />
             <div className="w-full h-full flex justify-between ">
               <Button
                 name="section__btn petch__btn"
                 click={() => setSectionSelect(true)}
-                // select={sectionSelect}
-              >
-                Petch
-              </Button>
+                children={'Petch'}
+              />
               <Button
                 name="host__btn section__btn"
                 click={() => setSectionSelect(false)}
-                // select={sectionSelect}
-              >
-                Host
-              </Button>
+                children={'Host'}
+              />
             </div>
           </div>
           <div className="w-full">
@@ -89,6 +86,6 @@ export default function Home() {
   );
 }
 
-Home.getLayout = function getLayout(page) {
+Home.getLayout = function getLayout(page: ReactElement) {
   return <HomeLayout>{page}</HomeLayout>;
 };

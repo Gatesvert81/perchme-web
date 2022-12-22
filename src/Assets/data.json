@@ -1,0 +1,55 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "university": "Legon",
+        "room_type": "One in a room",
+        "gender": "male",
+        "number_of_occupants": 1,
+        "description": null,
+        "price": 321221,
+        "negotiable": false,
+        "createdAt": "2022-12-09T00:49:25.263Z",
+        "updatedAt": "2022-12-09T02:17:40.839Z",
+        "publishedAt": "2022-12-09T02:17:40.835Z",
+        "occupant_type": "perch"
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "university": "Legon",
+        "room_type": "One in a room",
+        "gender": "male",
+        "number_of_occupants": 1,
+        "description": null,
+        "price": 321221,
+        "negotiable": false,
+        "createdAt": "2022-12-09T02:17:33.021Z",
+        "updatedAt": "2022-12-09T02:17:44.675Z",
+        "publishedAt": "2022-12-09T02:17:44.673Z",
+        "occupant_type": "perch"
+      }
+    },
+    {
+      "id": 3,
+      "attributes": {
+        "university": "Knust",
+        "room_type": "Two in a room",
+        "gender": "female",
+        "number_of_occupants": 1,
+        "description": null,
+        "price": 1500,
+        "negotiable": false,
+        "createdAt": "2022-12-09T02:18:19.979Z",
+        "updatedAt": "2022-12-09T02:18:21.911Z",
+        "publishedAt": "2022-12-09T02:18:21.909Z",
+        "occupant_type": "perch"
+      }
+    }
+  ],
+  "meta": {
+    "pagination": { "page": 1, "pageSize": 25, "pageCount": 1, "total": 3 }
+  }
+}

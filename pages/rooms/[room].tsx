@@ -2,23 +2,15 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button, Image, Page, PageHead } from '../../src/Components';
 import { Details } from '../../src/Features/dorms/components';
+import { RoomDataType } from '../../src/types';
 
-const room = {
-  title: 'Nice Sabarh room',
-  description:
-    'I am happy uef  hg bviagra baieuga v oeaurg voeaig auva aoi anuovha aeorn ao asou aoisdh a;rndo aprnaosd ;aoa sohfalsiuf a;ufb',
-  hall_name: 'Sarbah hall',
-  negotiable: 'negotiable',
-  price: '1,000',
-  essentials: ['fridge', 'Fan', 'Waredrop', 'Study table'],
-  occupant_type: 'Perch',
-  number_of_occupants: 1,
-  date_submitted: '11th January 2023',
-};
+
 function Room() {
-  // REVIEW: Define the types for the response
-  const [roomData, setRoomData] = useState<string[]>([]);
+  const [roomData, setRoomData] = useState<RoomDataType>();
+  console.log(roomData)
   const router = useRouter();
+
+ 
 
   useEffect(() => {
     const getRooms = async () => {
@@ -56,7 +48,7 @@ function Room() {
               {/* </AnchorLink> */}
             </p>
             <p className="room__sub__navigation__arrow">{`>`}</p>
-            <p>{roomData?.title}</p>
+            {/* <p>{roomData?.title}</p> */}
           </div>
           <div className="w-full flex justify-between">
             <Button
@@ -78,7 +70,7 @@ function Room() {
             </div>
             <div className="">
               <div className="flex justify-between">
-                <h5 className="main__head">{roomData?.hall_name}</h5>
+                {/* <h5 className="main__head">{roomData?.hall_name}</h5> */}
                 <div>
                   <p className="head">{`${roomData?.negotiable}  `}</p>
                   <p className="head">{`GH¢${roomData?.price?.toString()}`}</p>
@@ -98,7 +90,7 @@ function Room() {
                   Apply
                 </Button>
               </div>
-              <Details room={room} />
+              <Details room={roomData} />
             </div>
           </div>
           <div className="room__sub">

@@ -2,8 +2,9 @@ import React from 'react';
 import Image from './Image';
 
 interface ButtonProps {
-  text: string;
-  type: 'button' | 'submit' | 'reset';
+  children?: React.ReactNode | string;
+  type?: 'button' | 'submit' | 'reset';
+  alt?: string;
   click?: () => void;
   icon?: string;
   style?: string;
@@ -12,19 +13,27 @@ interface ButtonProps {
   select?: boolean;
 }
 
-function Button({ text, type, click, icon, style, left }: ButtonProps) {
+function Button({
+  children,
+  type,
+  click,
+  icon,
+  alt,
+  style,
+  left,
+}: ButtonProps) {
   return (
     <button type={type} className={style} onClick={click}>
       {icon && (
         <Image
           src={icon}
-          alt={text}
+          alt={alt || 'button'}
           boxStyle="icon"
           layout="fill"
           className="object-center"
         />
       )}
-      {text}
+      {children}
       {left && <p className="absolute top-1/4 right-2">{left}</p>}
     </button>
   );
