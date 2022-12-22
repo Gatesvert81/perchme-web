@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Page, PageHead } from "../../src/Components";
-import { RoomCard } from "../../src/Features/dorms/components";
-import { RoomData } from "../../src/types";
+import React, { useEffect, useState } from 'react';
+import { Page, PageHead } from '../../src/Components';
+import { RoomCard } from '../../src/Features/dorms/components';
+import { RoomData } from '../../src/types';
 
 function Index() {
-
-
-
   const [roomsData, setRoomsData] = useState<RoomData[] | undefined>();
 
   useEffect(() => {
     const getRooms = async () => {
-      const response = await fetch("http://localhost:1337/api/rooms", {
-        method: "GET",
+      const response = await fetch('http://localhost:1337/api/rooms', {
+        method: 'GET',
       })
         .then((response) => response.text())
         .then((result) => {
@@ -40,7 +37,7 @@ function Index() {
         </h4>
         <div className="space-y-3 px-5">
           {roomsData?.map((room, roomIndex) => (
-            <RoomCard room={room?.attributes} id={room?.id} />
+            <RoomCard key={room?.id} room={room?.attributes} id={room?.id} />
           ))}
         </div>
       </main>
