@@ -57,7 +57,7 @@ function SignUpForm() {
             <span className="text-link"> Sign in here</span>
           </AnchorLink>
         </p>
-        <Button style="primary-btn" type="submit" children="Sign up" />
+        <Button style="primary-btn" type="submit" text="Sign up" />
       </form>
     </>
   );

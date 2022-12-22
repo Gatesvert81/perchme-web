@@ -1,3 +1,4 @@
+import { signIn } from 'next-auth/react';
 import React, { useState } from 'react';
 import { Button, Page, PageHead } from '../../src/Components';
 import { SignInForm, SignUpForm } from '../../src/Features/auth/components';
@@ -17,10 +18,10 @@ function Authentication() {
         <div className="w-full flex flex-col">
           <div className="w-fit h-fit self-center flex justify-center items-center gap-5">
             <Button
-              children="Sign In"
+              text="Sign In"
               type="button"
-              click={() => setRegister(false)}
-              select={register}
+              click={() => signIn('google')}
+              // select={register}
               style={'text-link text-lg'}
               name="sign__tab__btn sign__in__tab__select"
             />
@@ -28,8 +29,8 @@ function Authentication() {
               style={'text-link text-lg'}
               click={() => setRegister(true)}
               name="sign__tab__btn sign__up__tab__select"
-              select={register}
-              children={'Sign Up'}
+              // select={register}
+              text={'Sign Up'}
               type="button"
             />
           </div>

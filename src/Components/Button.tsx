@@ -2,7 +2,8 @@ import React from 'react';
 import Image from './Image';
 
 interface ButtonProps {
-  children?: React.ReactNode | string;
+  children?: React.ReactNode;
+  text?: string;
   type?: 'button' | 'submit' | 'reset';
   alt?: string;
   click?: () => void;

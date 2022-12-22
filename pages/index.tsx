@@ -17,12 +17,12 @@ export default function Home() {
               <Button
                 name="section__btn petch__btn"
                 click={() => setSectionSelect(true)}
-                children={'Petch'}
+                text={'Petch'}
               />
               <Button
                 name="host__btn section__btn"
                 click={() => setSectionSelect(false)}
-                children={'Host'}
+                text={'Host'}
               />
             </div>
           </div>
